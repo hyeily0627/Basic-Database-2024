@@ -19,9 +19,36 @@
     - 개발툴 설치 
         - SSMS(Sql Server Management Studio) : https://learn.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16 - 사용가능한 언어에서 '한국어' 설치 - 다운로드 후 바로 설치하기! 
         : DB에 접근, 여러 개발 작업 
-        [SSMS접근](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS.png)
-        - 새쿼리로 생성 
-        [SSMS생성](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS1.png)
+
+        [SSMS로그인](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS.png)
+        
+        - 도구 - 옵션 - 글자체 및 크기 설정 
+        -> 모든 언어 - 줄번호 체크 
+        -> 디자이너 - 테이블 다시 만들어야하는 변경내용 저장 안 함 체크해제 - NULL 기본키 경고 체크 
+        -> SQL Server 개체탐색기 - 테이블 및 뷰 옵션 - 명령의 값 2개 다 0으로 바꾸기 
+
+        - 새쿼리로 생성하여 콘솔 열기 / F5로 실행
+
+        [SSMS생성예시](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS1.png)
+
+        - (주석관련) -- , /* */  사용가능
+        - equal 연산자 == 사용하지 않고 = 사용
+        - "" 사용하지 않고 '' 사용
+        - ; 는 필수가 아니나, 중요한 사항에서는 사용할 것
+        - 데이터베이스에서 all 은 * 이다!!(모든 컬럼을 읽어오다) 
+        - ctrl + shift + U  : 대문자 변환
+        - ctrl + shift + L  : 소문자 변환
+            => 스크롤 해서 사용인가봄 
+
+        - 인코딩 관련 
+            - 도구 - 텍스트편집기 - 파일 확장명 - 아래 사진 같이 설정 - ctrl+n 안내창 뜸  
+            [SSMS인코딩](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS2.png)
+
+
+- SQL 기본 학습
+    - SSMS 실행 
+
+-------------------------------------------------------------------------------------------------------------
 
 - 데이터베이스 개념
 1. 데이터, 정보, 지식  
@@ -35,8 +62,39 @@
 4. 데이터베이스 시스템의 구성 
 : DBMS < DATABASE < DATA (MODEL) 
 
-- DB 언어 
+-데이터베이스 시스템의 구성 
+1. DB 언어 
     - SQL(Structured Query Language) : 구조화된 질의 언어 
         - DDL(Data Definition Lang) - 데이터 정의어 : CREATE, ALTER, DROP (데이터베이스, 테이블, 인덱스 생성 )
         - DML(Data Manipulation Lang) - 데이터 조작어 : SELECT, INSERT, DELETE, UPDATE
         - DCL(Data Control Lang) - 데이터 제어어 : GRANT, REVOKE (권한, 트랜젝션 부여/제거 기능)
+
+2. 데이터 모델 
+    - 계층 데이터모델(사용x)
+    - 네트워트 데이터모델(사용x)
+    - 관계 데이터모델(주로사용)
+    - 객체 데이터모델
+    - 겍체-관계 데이터모델
+
+3. 스키마
+- PK(primary key: 기본키) - : 박스에서 줄 위에 위치 
+
+- FK(foreign key: 외래키(외부키)) 
+
+4. DML 학습
+    - SQL 명령어 키워드 : SELECT, INSERT, DELETE, UPDATE
+    - IT 개발에서 표현하는 언어 : Create, Request, Update, Delete => CRUD로 부름 
+      (ex. CRU 개발하라 의 뜻은 Create, Request, Update를 기능을 가진 것을 개발)
+    - SELECT문의 기본 문법
+        ```sql
+        SELECT [ALL|DISTNCT] 속성이름(들) - (All* 전부 | DISTINCT 를 사용하여 중복제거 )
+        FROM 테이블이름(들)
+        [WHERE 검색조건(들)]
+        [HAVING 검색조건(들)]
+        [ORDER BY 속성이름(들) [ASC|DESC]]
+        ```
+   - 중복제거 : DISTNCT
+   - 조건 연산자 : < > = 
+   - 집합 : ex) IN ('굿스포츠' , '대한미디어') , NOT IN
+   - 패턴비교 - LIKE 사용 : '축구%' -- '축구'라는 글자로 시작 
+   - 패턴비교 - 와일드문자 _ 사용 : '_구%' _(밑줄기호)특정 위치에 한문자만 대신할때 사용 
