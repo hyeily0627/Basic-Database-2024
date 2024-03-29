@@ -19,8 +19,13 @@
     - 개발툴 설치 
         - SSMS(Sql Server Management Studio) : https://learn.microsoft.com/ko-kr/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16 - 사용가능한 언어에서 '한국어' 설치 - 다운로드 후 바로 설치하기! 
         : DB에 접근, 여러 개발 작업 
+        
+        -SSMS 로그인 화면
+        ![SSMS로그인](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS.png)
 
-        [SSMS로그인](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS.png)
+        - SSMS 메인화면
+        ![SSMS로그인](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS3.png)
+
         
         - 도구 - 옵션 - 글자체 및 크기 설정 
         -> 모든 언어 - 줄번호 체크 
@@ -29,7 +34,7 @@
 
         - 새쿼리로 생성하여 콘솔 열기 / F5로 실행
 
-        [SSMS생성예시](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS1.png)
+        ![SSMS생성예시](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS1.png)
 
         - (주석관련) -- , /* */  사용가능
         - equal 연산자 == 사용하지 않고 = 사용
@@ -42,7 +47,7 @@
 
         - 인코딩 관련 
             - 도구 - 텍스트편집기 - 파일 확장명 - 아래 사진 같이 설정 - ctrl+n 안내창 뜸  
-            [SSMS인코딩](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS2.png)
+            ![SSMS인코딩](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/SSMS2.png)
 
 
 - SQL 기본 학습
@@ -98,3 +103,6 @@
    - 집합 : ex) IN ('굿스포츠' , '대한미디어') , NOT IN
    - 패턴비교 - LIKE 사용 : '축구%' -- '축구'라는 글자로 시작 
    - 패턴비교 - 와일드문자 _ 사용 : '_구%' _(밑줄기호)특정 위치에 한문자만 대신할때 사용 
+
+   ## 2일차
+
