@@ -9,3 +9,23 @@ SELECT bookid
  WHERE bookname LIKE '%축구%' 
    AND price >=20000
 
+-- 출판사가 '굿스포츠' 혹은 '대한미디어'인 도서 검색 
+SELECT * 
+  FROM Book 
+ WHERE publisher ='굿스포츠' 
+	   OR publisher = '대한미디어'
+
+-- 도서를 이름순으로 검색하시오 
+SELECT *
+  FROM Book 
+  ORDER BY bookname;
+
+-- 도서를 가격순으로 검색하고, 가격이 같으면 이름순으로 검색하시오
+SELECT *
+  FROM Book
+  ORDER BY price, bookname
+
+-- 최근에 등록된 도서부터 검색하시오
+SELECT *
+  FROM Book
+  ORDER BY bookid DESC
