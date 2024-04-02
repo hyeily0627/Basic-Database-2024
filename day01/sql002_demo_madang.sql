@@ -1,18 +1,18 @@
--- ½Ç½À¿¡ ÇÊ¿äÇÑ Madang DB ¸¦  »ý¼ºÇÕ´Ï´Ù.
--- µ¥ÀÌÅÍº£ÀÌ½º »ý¼º / ÃÖÃÊ DB »ý¼ºÇÒ¶§¿¡´Â MASTER(±âº»)¿¡¼­ »ý¼ºÇØ¾ßÇÔ 
--- USE´Â ÇØ´ç DB¸¦ »ç¿ëÇÑ´Ù´Â ¶æ
-USE [master] -- []´Â µ¥ÀÌÅÍº£ÀÌ½º¿Í ÄÃ·³¸í¿¡¼­ »ç¿ë
+-- ì‹¤ìŠµì— í•„ìš”í•œ Madang DB ë¥¼  ìƒì„±í•©ë‹ˆë‹¤.
+-- ë°ì´í„°ë² ì´ìŠ¤ ìƒì„± / ìµœì´ˆ DB ìƒì„±í• ë•Œì—ëŠ” MASTER(ê¸°ë³¸)ì—ì„œ ìƒì„±í•´ì•¼í•¨ 
+-- USEëŠ” í•´ë‹¹ DBë¥¼ ì‚¬ìš©í•œë‹¤ëŠ” ëœ»
+USE [master] -- []ëŠ” ë°ì´í„°ë² ì´ìŠ¤ì™€ ì»¬ëŸ¼ëª…ì—ì„œ ì‚¬ìš©
 
--- ¸¶´ç µ¥ÀÌÅÍº£ÀÌ½º »ý¼º
+-- ë§ˆë‹¹ ë°ì´í„°ë² ì´ìŠ¤ ìƒì„±
 IF EXISTS(SELECT name FROM sys.databases WHERE (name = 'Madang') OR (name = 'madang'))
      DROP DATABASE [Madang];
-CREATE DATABASE Madang -- ¼¼¹ÌÄÝ·Ð(;)Àº »ý·«°¡´É
+CREATE DATABASE Madang -- ì„¸ë¯¸ì½œë¡ (;)ì€ ìƒëžµê°€ëŠ¥
 GO
 
--- GO ¸í·É¾î´Â T-SQL ¹®Àº ¾Æ´ÏÁö¸¸ ÇöÀç±îÁö ¸í·É¾î¸¦ SQL Server¿¡ º¸³»¼­ ½ÇÇà½ÃÅ°´Â ¿ªÇÒÀ» ÇÑ´Ù. 
--- Áï GO ¸í·É¾î´Â ¸í·É¾î¸¦ ¹­¾î¼­ ¹èÄ¡·Î ¼­¹ö¿¡ º¸³»´Â ¿ªÇÒÀ» ÇÑ´Ù. 
+-- GO ëª…ë ¹ì–´ëŠ” T-SQL ë¬¸ì€ ì•„ë‹ˆì§€ë§Œ í˜„ìž¬ê¹Œì§€ ëª…ë ¹ì–´ë¥¼ SQL Serverì— ë³´ë‚´ì„œ ì‹¤í–‰ì‹œí‚¤ëŠ” ì—­í• ì„ í•œë‹¤. 
+-- ì¦‰ GO ëª…ë ¹ì–´ëŠ” ëª…ë ¹ì–´ë¥¼ ë¬¶ì–´ì„œ ë°°ì¹˜ë¡œ ì„œë²„ì— ë³´ë‚´ëŠ” ì—­í• ì„ í•œë‹¤. 
 
--- Book, Customer, Orders Å×ÀÌºí »ý¼º //DDL
+-- Book, Customer, Orders í…Œì´ë¸” ìƒì„± //DDL
 USE Madang
 CREATE TABLE Book (
   bookid      INT PRIMARY KEY,
@@ -37,25 +37,25 @@ CREATE TABLE Orders (
 );
 GO
 
--- Book, Customer, Orders µ¥ÀÌÅÍ »ý¼º
-INSERT INTO Book VALUES(1, 'Ãà±¸ÀÇ ¿ª»ç', '±Â½ºÆ÷Ã÷', 7000);
-INSERT INTO Book VALUES(2, 'Ãà±¸ ¾Æ´Â ¿©ÀÚ', '³ª¹«¼ö', 13000);
-INSERT INTO Book VALUES(3, 'Ãà±¸ÀÇ ÀÌÇØ', '´ëÇÑ¹Ìµð¾î', 22000);
-INSERT INTO Book VALUES(4, '°ñÇÁ ¹ÙÀÌºí', '´ëÇÑ¹Ìµð¾î', 35000);
-INSERT INTO Book VALUES(5, 'ÇÇ°Ü ±³º»', '±Â½ºÆ÷Ã÷', 8000);
-INSERT INTO Book VALUES(6, '¿ªµµ ´Ü°èº° ±â¼ú', '±Â½ºÆ÷Ã÷', 6000);
-INSERT INTO Book VALUES(7, '¾ß±¸ÀÇ Ãß¾ï', 'ÀÌ»ó¹Ìµð¾î', 20000);
-INSERT INTO Book VALUES(8, '¾ß±¸¸¦ ºÎÅ¹ÇØ', 'ÀÌ»ó¹Ìµð¾î', 13000);
-INSERT INTO Book VALUES(9, '¿Ã¸²ÇÈ ÀÌ¾ß±â', '»ï¼º´ç', 7500);
+-- Book, Customer, Orders ë°ì´í„° ìƒì„±
+INSERT INTO Book VALUES(1, 'ì¶•êµ¬ì˜ ì—­ì‚¬', 'êµ¿ìŠ¤í¬ì¸ ', 7000);
+INSERT INTO Book VALUES(2, 'ì¶•êµ¬ ì•„ëŠ” ì—¬ìž', 'ë‚˜ë¬´ìˆ˜', 13000);
+INSERT INTO Book VALUES(3, 'ì¶•êµ¬ì˜ ì´í•´', 'ëŒ€í•œë¯¸ë””ì–´', 22000);
+INSERT INTO Book VALUES(4, 'ê³¨í”„ ë°”ì´ë¸”', 'ëŒ€í•œë¯¸ë””ì–´', 35000);
+INSERT INTO Book VALUES(5, 'í”¼ê²¨ êµë³¸', 'êµ¿ìŠ¤í¬ì¸ ', 8000);
+INSERT INTO Book VALUES(6, 'ì—­ë„ ë‹¨ê³„ë³„ ê¸°ìˆ ', 'êµ¿ìŠ¤í¬ì¸ ', 6000);
+INSERT INTO Book VALUES(7, 'ì•¼êµ¬ì˜ ì¶”ì–µ', 'ì´ìƒë¯¸ë””ì–´', 20000);
+INSERT INTO Book VALUES(8, 'ì•¼êµ¬ë¥¼ ë¶€íƒí•´', 'ì´ìƒë¯¸ë””ì–´', 13000);
+INSERT INTO Book VALUES(9, 'ì˜¬ë¦¼í”½ ì´ì•¼ê¸°', 'ì‚¼ì„±ë‹¹', 7500);
 INSERT INTO Book VALUES(10, 'Olympic Champions', 'Pearson', 13000);
 
-INSERT INTO Customer VALUES (1, '¹ÚÁö¼º', '¿µ±¹ ¸ÇÃ¼½ºÅÍ', '000-5000-0001');
-INSERT INTO Customer VALUES (2, '±è¿¬¾Æ', '´ëÇÑ¹Î±¹ ¼­¿ï', '000-6000-0001');  
-INSERT INTO Customer VALUES (3, 'Àå¹Ì¶õ', '´ëÇÑ¹Î±¹ °­¿øµµ', '000-7000-0001');
-INSERT INTO Customer VALUES (4, 'Ãß½Å¼ö', '¹Ì±¹ Å¬¸®ºí·£µå', '000-8000-0001');
-INSERT INTO Customer VALUES (5, '¹Ú¼¼¸®', '´ëÇÑ¹Î±¹ ´ëÀü', NULL);
+INSERT INTO Customer VALUES (1, 'ë°•ì§€ì„±', 'ì˜êµ­ ë§¨ì²´ìŠ¤í„°', '000-5000-0001');
+INSERT INTO Customer VALUES (2, 'ê¹€ì—°ì•„', 'ëŒ€í•œë¯¼êµ­ ì„œìš¸', '000-6000-0001');  
+INSERT INTO Customer VALUES (3, 'ìž¥ë¯¸ëž€', 'ëŒ€í•œë¯¼êµ­ ê°•ì›ë„', '000-7000-0001');
+INSERT INTO Customer VALUES (4, 'ì¶”ì‹ ìˆ˜', 'ë¯¸êµ­ í´ë¦¬ë¸”ëžœë“œ', '000-8000-0001');
+INSERT INTO Customer VALUES (5, 'ë°•ì„¸ë¦¬', 'ëŒ€í•œë¯¼êµ­ ëŒ€ì „', NULL);
 
--- ÁÖ¹®(Orders) Å×ÀÌºíÀÇ Ã¥°ªÀº ÇÒÀÎ ÆÇ¸Å¸¦ °¡Á¤ÇÔ
+-- ì£¼ë¬¸(Orders) í…Œì´ë¸”ì˜ ì±…ê°’ì€ í• ì¸ íŒë§¤ë¥¼ ê°€ì •í•¨
 INSERT INTO Orders VALUES (1, 1, 1, 6000, '2021-07-01'); 
 INSERT INTO Orders VALUES (2, 1, 3, 21000, '2021-07-03');
 INSERT INTO Orders VALUES (3, 2, 5, 8000, '2021-07-03'); 
