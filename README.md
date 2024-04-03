@@ -361,9 +361,72 @@
 ## 5일차 
 - SQL 고급
     - 서브쿼리 리뷰
-    - 뷰
-    - 인덱스
+       * ~ ALL : 서브쿼리의 모든 결과에 대해 ~하다
+       * ~ ANY : 서브쿼리의 하나 이상의 결과에 대해 ~하다
+
+       1) 스칼라 부속질의(SELECT 부속질의)
+       2) 인라인뷰(FROM 부속질의)
+
+    - 뷰(233p) : 하나 이상의 테이블을 합하여 만든 가상의 테이블 
+      -> 복잡한 쿼리로 생성되는 결과를 자주 사용하기 위해서 만드는 개체 
+      -> 조인이나, 유니언도 테이블을 합쳐 만들 수 있는데 뷰가 이를 다 대체 가능하다.
+        - 편리하고 보안에 강하며, 논리적 독립성을 띰 
+        - 원본데이터가 변경되면 같이 변경되고, 인덱스 생성은 어렵다
+        - CUD연산에 제약이 있다
+        ```sql
+        -- 생성
+        CREATE VIEW 뷰이름[(열이름 [, ...])]
+        AS <SELECT 쿼리문>
+        
+        -- 수정
+        ALTER VIEW 뷰이름[(열이름 [, ...])]
+        AS <SELECT 쿼리문>
+
+        -- 삭제
+        DROP VIEW 뷰이름
+        ```
+
+    - 인덱스(240p) : 도서의 색인이나 사전과 같이 데이터를 쉽고 빠르게 찾을 수 있도록 만든 데이터 구조 
+        ```sql
+         -- 생성
+        CREATE [UNIQUE] [CLUSTERED|NONCLUSTERED] INDEX 인덱스 이름
+        ON 테이블명(속성이름 [ASC|DESC] [, ...n])
+
+        --수정
+        ALTER INDEX {인덱스 이름|ALL}
+        ON 테이블명 { REBUILD | DISABLE | REORGANIZE }
+
+        -- 삭제
+        DROP INDEX 인덱스이름 ON 테이블명;
+        ```
+
+        - SQL서버의 인덱스는 B-tree 구조 
+        1) 클러스터 인덱스
+            - 테이블 생성시 기본키(PK)를 생성하면 자동 생성 
+        2) 비클러스터 인덱스 
+
+        - SSMS에서 실행계획을 가지고 쿼리 실행 성능을 체크할 수 있음
+            - SSMS - 마당 테이블 - dbo.Book 오른쪽 클릭 / dbo.Mybook 각각  - 모든행선택 - 상단 쿼리 - 예상실행계획표시 
       
 - 파이썬 SQL Server 연동 프로그래밍
-    - PyQT GUI 생성
-    - SQL Server 데이터 핸들링
+    - Madang DB 관리 프로그램 
+        - PyQT GUI 생성 (파일명 MadangBook.ui)
+            - QT deginer 진입 - Main window 선택 - 생성 
+            - group box(책정보) / table widget / label(책번호,책제목,출판사,정가) / line Edit / pushbutton(신규등록,저장,삭제,조회)
+            - 위 위젯들 이름 설정 해야함! (QT deginer 들어가서 확인해)
+        - SQL Server 데이터 핸들링
+            - pymssql 라이브러리 설치 
+
+            ```shell
+            > pip install pymssql
+            ```
+            - DB연결 설정  
+                1. 윈도우 앱 - SQL server 2022 - 구성관리자 접속 
+                2. sql서버 네트워트 구성 -> MSSQL에 대한 프로토콜 
+                3. TCP/IP 사용으로 변경(TCP/IP 더블클릭 - TCP/IP속성창 )
+                4. TCP/IP속성창 - IP주소탭에서 IP2(본인아이피인 것)랑 IP4(127.1.0.1으로 된 주소 ) 사용을 예로 변경 
+                ![설정](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/db001.png)
+                5. 적용 후 오른쪽 탭 SQL Server 서비스 > SQL Server(MSSQLServer) 더블클릭 - **다시시작** 버튼 클릭, 재시작 필요
+
+
+- 데이터베이스 모델링 
