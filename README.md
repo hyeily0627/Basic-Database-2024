@@ -429,4 +429,21 @@
                 5. 적용 후 오른쪽 탭 SQL Server 서비스 > SQL Server(MSSQLServer) 더블클릭 - **다시시작** 버튼 클릭, 재시작 필요
 
 
+## 6일차 (24.04.04)
+- 파이썬 SQL Server 연동 프로그래밍 
+    - Madang DB 관리 프로그램 
+        - PyQt5 + pymssql
+
+- <문제❗한글 깨짐> 해결방안 
+    1. DB 테이블의 varchar(ASCII) -> nvarchar(UTF-8) 변경
+    2. 파이썬에서 pymssql로 접속할 때, charset을 'UTF-8'로 설정 
+    3. INSERT 쿼리에 한글 입력되는 컬럼은 N'{컬럼이름}'을 붙여줌(N 유니코드로 입력하라는 뜻)
+
+- 실행화면 
+![연동](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/db002.mp4)
+
+## 7일차 
+- SQL 고급 
+    - 트랜잭션 
+
 - 데이터베이스 모델링 
