@@ -440,8 +440,8 @@
     3. INSERT 쿼리에 한글 입력되는 컬럼은 N'{컬럼이름}'을 붙여줌(N 유니코드로 입력하라는 뜻)
 
 - 실행화면 
-    https://github.com/hyeily0627/Basic-Database-2024/assets/156732476/d6942550-b37c-4a1f-8f84-236a6a3ba7e8
-
+    
+https://github.com/hyeily0627/Basic-Database-2024/assets/156732476/84c10c07-ecc2-4e97-b70f-98d4b755e96b
 
 
 ## 7일차 
