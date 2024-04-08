@@ -21,11 +21,11 @@ CREATE TABLE Inventory (
 );
 GO
 
--- 100만건 더미데이터 생성
+-- 20만건 더미데이터 생성
 DECLARE @i INT;
 SET @i = 0;
 
-WHILE (@i < 1000000)
+WHILE (@i < 2000000)
 BEGIN
 	SET @i = @i + 1;
 	INSERT INTO Users (username, guildno, regdate)
