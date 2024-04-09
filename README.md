@@ -518,5 +518,30 @@ https://github.com/hyeily0627/Basic-Database-2024/assets/156732476/84c10c07-ecc2
                 - 일반 : 기본 데이터베이스 hr 선택
                 - 사용자 매핑 : hr 선택, 데이터베이스 역할 멤버 : db_owner추가 선택 
         - hrDB 계정 로그인
+   
     2. HR 사용자 로그인(VS Code)
-        
+        - SELECT
+        - WHERE, ORDER BY
+        - FUNCTION
+        - AGGREGATE FUNC
+        - JOIN
+        - SET...
+
+    ![HR_ERD](https://raw.githubusercontent.com/hyeily0627/Basic-Database-2024/main/images/db003.png)
+
+## 9일차
+- 실무실습
+    - 쿼리실습하기 
+        - 기본 SELECT, WHERE, ORDER BY 
+        - 집계함수 : GROUP BY, ROLL UP 
+        - JOIN, SUBQUERY, UNION...
+        - CASE WHEN THEN END...
+        - 내장함수... 
+
+- 공부를 더 할 부분!
+    - 트랜잭션 중급이상
+    - DB보안 백업과 복원 
+    - 모델링 + 정규화
+    - 데이터 모델링 실습 
+
+

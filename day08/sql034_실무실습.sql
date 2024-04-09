@@ -16,8 +16,8 @@ SELECT EMPLOYEE_ID
 SELECT FIRST_NAME + ' ' + LAST_NAME AS NAME 
       ,JOB_ID AS JOB
       ,SALARY
-      ,(SALARY * 12) + 100 AS Increased Ann Salary  
-      (SALARY +100) SALARY * 12 AS  Increased Salary
+      ,(SALARY * 12) + 100 AS 'Increased ANN Salary'  
+      ,(SALARY +100) * 12 AS  'Increased Salary'
   FROM employees
 
 
@@ -25,7 +25,7 @@ SELECT FIRST_NAME + ' ' + LAST_NAME AS NAME
 2. 사원정보에서 모든 사원의 Last name에 LAST NAME에 Last name : 
 1 year Salary = 연봉 컬럼에 1Year Salary 별칭을 붙이시오 
 */
-SELECT LAST_NAME + ': 1Year SALARY = $' + CONVERT(VARCHAR, SALARY * 12) AS 1Year SALARY
+SELECT LAST_NAME + ': 1Year SALARY = $' + CONVERT(VARCHAR, SALARY * 12) AS '1 Year SALARY'
       ,SALARY * 12
   FROM employees 
 
@@ -50,9 +50,3 @@ SELECT LAST_NAME AS ' e and o NAME'
   FROM employees
 WHERE LAST_NAME LIKE '%e%' AND LAST_NAME LIKE '%o%'
 
-/* 
-5. 현재의 날짜 타입을 날짜 함수를 통해 확인하고, 
-2006년 5월 20일 부터 2007년 5월 20일 사이에 고용된 사원의 이름(FIRST_NAME + ' ' + LAST_NAME)
-, 사원번호, 고용일자를 출력하는데 단, 입사일이 빠른 순으로 정렬하시오(18개 행)
-*/
-SELECT GETDATE()
